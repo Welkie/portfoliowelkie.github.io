@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lam Huynh Khang | AI Engineer Portfolio</title>
+  <meta name="description"
+    content="Portfolio of Lam Huynh Khang, an Artificial Intelligence Undergraduate and Aspiring AI Engineer. Projects, skills, and achievements." />
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <canvas id="neural-canvas"></canvas>
+  <div id="app">
+    <header id="main-header" class="section glass-panel">
+      <div class="header-content">
+        <div class="header-image">
+          <img src="/src/assets/images/anhchandung.jpg" alt="Lam Huynh Khang" class="profile-pic">
+        </div>
+        <div class="header-text">
+          <h1 class="name">LAM HUYNH KHANG</h1>
+          <p class="title typing-container"><span id="typing-text"></span><span class="cursor">|</span></p>
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-phone-alt"></i>
+              <span>(+84) 918616264</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:lamhuynhkhang281@gmail.com">lamhuynhkhang281@gmail.com</a>
+            </div>
+            <div class="contact-item">
+              <i class="fab fa-github"></i>
+              <a href="https://github.com/Welkie" target="_blank">github.com/Welkie</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Education -->
+      <section id="education" class="section">
+        <div class="section-header">
+          <i class="fas fa-graduation-cap section-icon"></i>
+          <h2>Education</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item glass-panel">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="edu-header">
+                <h3>FPT University, Ho Chi Minh City</h3>
+                <span class="date">2024 – Present</span>
+              </div>
+              <p class="degree">Bachelor of Artificial Intelligence</p>
+              <p class="details">GPA: 3.2 / 4.0</p>
+              <p class="highlight">Recipient of 70% FPT University Scholarship (full course)</p>
+            </div>
+          </div>
+          <div class="timeline-item glass-panel">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="edu-header">
+                <h3>Ly Tu Trong High School for the Gifted</h3>
+                <span class="date">2021 – 2024</span>
+              </div>
+              <p class="degree">Specialized Informatics Class</p>
+              <p class="details">GPA: 8.5 / 10.0</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="section">
+        <div class="section-header">
+          <i class="fas fa-laptop-code section-icon"></i>
+          <h2>Projects</h2>
+        </div>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-image">
+              <img src="/src/assets/images/projects/neurobots.png" alt="NeuroBots AI Study Assistant">
+            </div>
+            <div class="project-card-content">
+              <div class="project-header">
+                <h3>NeuroBots – AI Study Assistant</h3>
+                <span class="year">2025</span>
+              </div>
+              <p>Developed Mezon-NeuroBots, an AI-powered study assistant for high school students.</p>
+              <ul>
+                <li>Designed personalized quizzes, exercises, and study materials.</li>
+                <li>Integrated smart scheduling, reminders, and streak tracking.</li>
+              </ul>
+              <div class="tech-stack">
+                <span>Mezon SDK</span>
+                <span>Google Gemini API</span>
+                <span>Node.js</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <img src="/src/assets/images/projects/lwai.png" alt="LWAI English Vocabulary Learning">
+            </div>
+            <div class="project-card-content">
+              <div class="project-header">
+                <h3>LWAI – English Vocabulary Learning</h3>
+                <span class="year">2024</span>
+              </div>
+              <p>AI-powered English vocabulary learning platform for primary school students.</p>
+              <ul>
+                <li>Integrated real-time image recognition using Google Teachable Machine.</li>
+                <li>Interactive learning experience with flashcards and games.</li>
+              </ul>
+              <div class="tech-stack">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <img src="/src/assets/images/projects/watering_system.jpg" alt="Automatic Plant Watering System">
+            </div>
+            <div class="project-card-content">
+              <div class="project-header">
+                <h3>Automatic Plant Watering System</h3>
+                <span class="year">2023</span>
+              </div>
+              <p>IoT system using Arduino and soil moisture sensors with automated irrigation.</p>
+              <div class="tech-stack">
+                <span>Arduino</span>
+                <span>IoT</span>
+                <span>C++</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Honors & Awards -->
+      <section id="awards" class="section">
+        <div class="section-header">
+          <i class="fas fa-trophy section-icon"></i>
+          <h2>Honors & Awards</h2>
+        </div>
+        <div class="award-grid">
+          <div class="award-card glass-panel">
+            <div class="award-info">
+              <span class="award-year">2025</span>
+              <p>Prospect Award – FPT Hackathon Chip AI: Logistics on Edge</p>
+            </div>
+            <img src="/src/assets/images/honors_awards/hackathon.jpg" alt="FPT Hackathon Chip AI" class="award-img">
+          </div>
+          <div class="award-card glass-panel">
+            <div class="award-info">
+              <span class="award-year">2025</span>
+              <p>First Prize – MEZON MONTHLY BOT CHALLENGE | Bot Battle – Powered by Mezon</p>
+            </div>
+            <img src="/src/assets/images/honors_awards/mezon.png" alt="MEZON Bot Challenge" class="award-img">
+          </div>
+          <div class="award-card glass-panel">
+            <div class="award-info">
+              <span class="award-year">2025</span>
+              <p>Third Prize – City-Level Science and Technology Competition (Grade 12) – Field: System Software</p>
+            </div>
+            <img src="/src/assets/images/honors_awards/Third_Prize_City_Level_Science.jpg" alt="City Science Grade 12"
+              class="award-img">
+          </div>
+          <div class="award-card glass-panel">
+            <div class="award-info">
+              <span class="award-year">2024</span>
+              <p>Third Prize – School-Level Science and Technology Competition (Grade 12)</p>
+            </div>
+            <img src="/src/assets/images/honors_awards/Third_Prize_School_Level_Science.jpg"
+              alt="School Science Grade 12" class="award-img">
+          </div>
+          <div class="award-card glass-panel">
+            <div class="award-info">
+              <span class="award-year">2024</span>
+              <p>Consolation Prize – City-Level Excellent Student Competition in Informatics (Grade 12)</p>
+            </div>
+            <img src="/src/assets/images/honors_awards/excellent_student_informatics_city_grade12_consolation_2024.jpg"
+              alt="Excellent Student Grade 12" class="award-img">
+          </div>
+          <div class="award-card glass-panel">
+            <div class="award-info">
+              <span class="award-year">2023</span>
+              <p>Second Prize – City-Level Young Informatics Contest C1 (Grade 11)</p>
+            </div>
+            <img src="/src/assets/images/honors_awards/Second_Prize_City_Level_Young_Informatics_Contest_C1.jpg"
+              alt="Young Informatics C1" class="award-img">
+          </div>
+          <div class="award-card glass-panel">
+            <div class="award-info">
+              <span class="award-year">2023</span>
+              <p>Consolation Prize – City-Level Young Informatics Contest D3 (Grade 11)</p>
+            </div>
+            <img src="/src/assets/images/honors_awards/Consolation_Prize_City_Level_Young_Informatics_Contest_D3.jpg"
+              alt="Young Informatics D3" class="award-img">
+          </div>
+          <div class="award-card glass-panel">
+            <div class="award-info">
+              <span class="award-year">2023</span>
+              <p>Consolation Prize – City-Level Excellent Student Competition in Informatics (Grade 11)</p>
+            </div>
+            <img src="/src/assets/images/honors_awards/Consolation_Prize_City_Level_Excellent_Student.jpg"
+              alt="Excellent Student Grade 11" class="award-img">
+          </div>
+
+          <div class="award-card glass-panel">
+            <div class="award-info">
+              <span class="award-year">2022</span>
+              <p>Consolation Prize – Central and Central Highlands Informatics Olympiad (Grade 10)</p>
+            </div>
+            <img
+              src="/src/assets/images/honors_awards/Consolation_Prize_Central_and_Central_Highlands_Informatics_Olympiad_Grade_10_2022.jpg"
+              alt="Central Highlands Olympiad" class="award-img">
+          </div>
+          <div class="award-card glass-panel">
+            <div class="award-info">
+              <span class="award-year">2021</span>
+              <p>Second Prize – City-Level Informatics Competition for Secondary School Students (Grade 9)</p>
+            </div>
+            <img src="/src/assets/images/honors_awards/informatics_city_grade9_second_2021.jpg"
+              alt="City Informatics Grade 9" class="award-img">
+          </div>
+        </div>
+      </section>
+
+      <!-- Extracurricular -->
+      <section id="activities" class="section">
+        <div class="section-header">
+          <i class="fas fa-users section-icon"></i>
+          <h2>Extracurricular Activities</h2>
+        </div>
+        <div class="activity-list">
+          <div class="activity-item glass-panel">
+            <div class="activity-date">2024 – Present</div>
+            <div class="activity-details">
+              <h3>VNOI – Volunteer Manager</h3>
+              <p>Managed official VNOI page, supervised 30+ volunteers, ensured stable operations.</p>
+              <img src="/src/assets/images/activities/vnoi.jpg" alt="VNOI" class="activity-img">
+            </div>
+          </div>
+          <div class="activity-item glass-panel">
+            <div class="activity-date">2025 – Present</div>
+            <div class="activity-details">
+              <h3>NAB Talent Connect</h3>
+              <p>Supported communication and promotion for NAB events.</p>
+            </div>
+          </div>
+          <div class="activity-item glass-panel">
+            <div class="activity-date">2021 – 2024</div>
+            <div class="activity-details">
+              <h3>Branch Secretary – Ly Tu Trong High School for the Gifted</h3>
+              <p>Organized class activities and youth union programs.</p>
+            </div>
+          </div>
+          <div class="activity-item glass-panel">
+            <div class="activity-date">2023</div>
+            <div class="activity-details">
+              <h3>Can Tho Esport Championship – Head Organizer</h3>
+              <p>Led a 10-member team for a city-level student esport tournament.</p>
+            </div>
+          </div>
+          <div class="activity-item glass-panel">
+            <div class="activity-date">2023</div>
+            <div class="activity-details">
+              <h3>PISE Vietnam – Mentee</h3>
+              <p>Participated in leadership and social entrepreneurship programs.</p>
+              <img src="/src/assets/images/activities/pise.jpg" alt="PISE" class="activity-img">
+            </div>
+          </div>
+          <div class="activity-item glass-panel">
+            <div class="activity-date">2022 – 2023</div>
+            <div class="activity-details">
+              <h3>Zero Waste Club – Head of Event Department</h3>
+              <p>Organized environmental campaigns and workshops.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills & Languages -->
+      <div class="grid-2-col">
+        <section id="skills" class="section">
+          <div class="section-header">
+            <i class="fas fa-tools section-icon"></i>
+            <h2>Technical Skills</h2>
+          </div>
+          <div class="skills-content">
+            <div class="skill-group">
+              <strong>Languages:</strong> C++, Python, SQL
+            </div>
+            <div class="skill-group">
+              <strong>AI / Data:</strong> PyTorch, scikit-learn, NumPy, Pandas, Matplotlib
+            </div>
+            <div class="skill-group">
+              <strong>Tools:</strong> Git, GitHub, Google Colab, Kaggle
+            </div>
+          </div>
+        </section>
+
+        <section id="languages" class="section">
+          <div class="section-header">
+            <i class="fas fa-language section-icon"></i>
+            <h2>Languages</h2>
+          </div>
+          <ul class="lang-list">
+            <li><strong>Vietnamese:</strong> Native</li>
+            <li><strong>English:</strong> IELTS 5.5</li>
+            <li><strong>Japanese:</strong> Basic</li>
+          </ul>
+        </section>
+      </div>
+
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Lam Huynh Khang.</p>
+    </footer>
+  </div>
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+
+</html>
