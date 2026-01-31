@@ -1,4 +1,4 @@
-import '../css/style.css';
+// CSS loaded via link tag in HTML
 import { initCanvas } from './canvas.js';
 import { typeWriter, initScrollReveal } from './ui.js';
 
