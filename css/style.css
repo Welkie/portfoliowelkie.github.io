@@ -20,6 +20,10 @@
   /* Borders */
   --radius-sm: 4px;
   --radius-md: 8px;
+
+  /* Card Glow effect */
+  --mouse-x: 50%;
+  --mouse-y: 50%;
 }
 
 * {
@@ -64,7 +68,7 @@ a::after {
   width: 0;
   height: 1px;
   background: var(--color-accent);
-  transition: width 0.3s;
+  transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 a:hover::after {
@@ -108,6 +112,40 @@ ul {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   padding: var(--spacing-lg);
   border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Mouse-tracking glow inside glass panels */
+.glass-panel::before,
+.project-card::before,
+.award-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y),
+      rgba(100, 255, 218, 0.05),
+      transparent 40%);
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.glass-panel:hover::before,
+.project-card:hover::before,
+.award-card:hover::before {
+  opacity: 1;
+}
+
+.glass-panel>*,
+.project-card>*,
+.award-card>* {
+  position: relative;
+  z-index: 1;
 }
 
 /* Animations */
@@ -119,6 +157,18 @@ ul {
 }
 
 .section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered Animations for children */
+.stagger-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.section.visible .stagger-item.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -225,6 +275,12 @@ ul {
   background: var(--color-accent);
   border-radius: 50%;
   box-shadow: 0 0 10px var(--color-accent);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover .timeline-dot {
+  transform: scale(1.3);
+  box-shadow: 0 0 15px var(--color-accent), 0 0 5px var(--color-accent);
 }
 
 .edu-header {
@@ -272,17 +328,20 @@ ul {
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(100, 255, 218, 0.1);
   border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
 
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  /* 3D Transform reset */
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.2s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+  box-shadow: 0 20px 40px -15px rgba(2, 12, 27, 0.9);
+  z-index: 10;
 }
 
 .project-image {
@@ -405,6 +464,12 @@ ul {
   object-fit: cover;
   border: 4px solid var(--color-accent);
   box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.5s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 0 30px rgba(100, 255, 218, 0.5);
 }
 
 .header-text {
@@ -423,12 +488,15 @@ ul {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-sm);
-  transition: transform 0.2s;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .award-card:hover {
-  transform: translateY(-5px);
-  background: rgba(17, 34, 64, 0.8);
+  transform: translateY(-8px);
+  background: rgba(17, 34, 64, 0.85);
+  box-shadow: 0 15px 30px -10px rgba(2, 12, 27, 0.8);
 }
 
 .award-img {
@@ -560,13 +628,14 @@ footer {
   flex-direction: column;
   justify-content: space-between;
   gap: var(--spacing-sm);
-  transition: transform 0.2s;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
   height: 100%;
 }
 
 .award-card:hover {
-  transform: translateY(-5px);
-  background: rgba(17, 34, 64, 0.8);
+  transform: translateY(-8px);
+  background: rgba(17, 34, 64, 0.85);
+  box-shadow: 0 15px 30px -10px rgba(2, 12, 27, 0.8);
 }
 
 .award-img {
@@ -580,6 +649,11 @@ footer {
   border-radius: var(--radius-sm);
   border: 1px solid rgba(100, 255, 218, 0.1);
   margin-top: auto;
+  transition: transform 0.4s ease;
+}
+
+.award-card:hover .award-img {
+  transform: scale(1.03);
 }
 
 .award-info {
@@ -680,6 +754,11 @@ footer {
   border-radius: var(--radius-sm);
   border: 1px solid rgba(100, 255, 218, 0.1);
   margin-top: var(--spacing-sm);
+  transition: transform 0.4s ease;
+}
+
+.activity-item:hover .activity-img {
+  transform: scale(1.02);
 }
 
 /* Response for small screens */
